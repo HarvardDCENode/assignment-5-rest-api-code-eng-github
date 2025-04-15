@@ -1,0 +1,39 @@
+mixin houseTableRow(house)
+  tr 
+    td= house.address
+    td= house.price
+    td
+      a(href="/house/" + house.id) View
+    td
+      a(href="/house/" + house.id + "/edit") Edit
+    td
+      a(href="/house/" + house.id + "/delete") delete
+
+mixin houseTable(houses)
+    table(border='1')
+        tr 
+          td <strong>Address</strong>
+          td <strong>Price</strong>
+          td
+          td
+          td
+        each house, i in houses
+            +houseTableRow(house)
+
+mixin houseFields(house) 
+  div
+    label(for="address") Address: 
+  div
+    textarea(name="address")
+      if house
+        =house.address
+  div
+    label(for="price") Price: 
+  div
+    input(name="price", type="number", value=house ? house.price : null)
+
+
+mixin houseFormFields(house)
+  +houseFields(house)
+  div 
+    input(value=house ? "Update" : "Create", type="submit")

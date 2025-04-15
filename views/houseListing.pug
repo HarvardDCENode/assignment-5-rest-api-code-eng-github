@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  h1= house.address
+  a(href="/") Home
+  br
+  a(href="/house/" + house.id + "/edit") Edit
+  div 
+    p Price: #{house.price}

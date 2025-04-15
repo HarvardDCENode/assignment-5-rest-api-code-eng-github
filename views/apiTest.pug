@@ -1,0 +1,9 @@
+extends layout
+include mixins/houseTable.pug
+
+block content
+  h1 API Tester
+  form(id="apiTestForm")
+    +houseFields()
+    div 
+      input(id="RUN_API_TEST" value="Run Tests", type="submit")

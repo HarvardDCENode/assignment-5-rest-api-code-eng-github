@@ -1,0 +1,12 @@
+extends layout
+include mixins/houseTable.pug
+
+block content
+  h1 House Listings
+  div 
+    a(href="/house/create") <strong>Create Listing +</strong>
+    br
+    a(href="/apiTest") Test API
+    p(style='white-space:pre;')
+
+  +houseTable(houses)

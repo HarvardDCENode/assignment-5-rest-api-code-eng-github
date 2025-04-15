@@ -1,0 +1,9 @@
+extends layout
+include mixins/houseTable.pug
+
+block content
+  h1 Edit new house listing
+  a(href="/") Home
+  div 
+    form(action="/house/" + house.id + "/edit")
+      +houseFormFields(house)
